@@ -30,3 +30,11 @@ app.use('/api/queue', QueueRouter);
 app.use('/api/fuel', FuelRouter);
 app.use('/api/station', StationRouter);
 app.use('/api/user', UserRouter);
+
+app.get('*', function(req, res){
+    res.send(
+        `<div>
+            <h3>404 Not found!</h3>
+        </div>`
+    );
+  });
