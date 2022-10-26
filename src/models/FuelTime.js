@@ -3,7 +3,8 @@ const Fuel = require("./Fuel");
 
 const FuelTimeSchema = new mongoose.Schema({
     fuel: {
-        type: Fuel,
+        type: mongoose.Types.ObjectId,
+        ref: "Fuel"
     },
     arrival: {
         type: String,
