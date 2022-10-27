@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "fuel station queue management system backend service",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "start": "nodemon src/app.js",
-    "prod": "node src/app.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "it19955650",
   "license": "ISC",

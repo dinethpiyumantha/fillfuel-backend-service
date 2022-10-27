@@ -1,12 +1,12 @@
 require("dotenv").config();
 
 const express = require("express");
-const { mongoodbConnect } = require("./config/mongodb");
-const FuelRouter = require("./routes/FuelRoutes");
-const QueueRouter = require("./routes/QueueRoutes");
-const StationRouter = require("./routes/StationRoutes");
-const UserRouter = require("./routes/UserRouter");
-const { logInfo } = require("./utils/logging");
+const { mongoodbConnect } = require("./src/config/mongodb");
+const FuelRouter = require("./src/routes/FuelRoutes");
+const QueueRouter = require("./src/routes/QueueRoutes");
+const StationRouter = require("./src/routes/StationRoutes");
+const UserRouter = require("./src/routes/UserRouter");
+const { logInfo } = require("./src/utils/logging");
 const cors = require("cors");
 
 const app = express();
