@@ -26,16 +26,14 @@ app.listen(PORT, startingMethod(PORT));
 app.use(cors());
 app.use(express.json());
 
+app.set("view options", {layout: false});
+app.use(express.static(__dirname + '/public'));
+
 app.use('/api/queue', QueueRouter);
 app.use('/api/fuel', FuelRouter);
 app.use('/api/station', StationRouter);
 app.use('/api/user', UserRouter);
 
 app.get('*', function(req, res){
-    res.send(
-        `<div>
-            <h3>404 Not found!</h3>
-            <img src="https://user-images.githubusercontent.com/55337770/198184616-054cac6d-4935-4a2e-b2b0-2cbac02c2329.png" alt="logo" />
-        </div>`
-    );
+    res.render('/views/index.html');
   });
