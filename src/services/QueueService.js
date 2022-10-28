@@ -8,12 +8,12 @@ module.exports = QueueService = {
         return queues;
     },
     create: async (queue) => {
-        let insertedQueue = await Queue.insert(queue).populate("customers").populate("fuel").populate("station");
+        let insertedQueue = await Queue.create(queue);
         return insertedQueue;
     },
-    addCustomerToQueue: async (queueId, user) => {
-        let queue = await Queue.findById(queueId).populate("customers").populate("fuel").populate("station");
-        queue.customers.push(user);
+    addCustomerToQueue: async (queueId, custId) => {
+        let queue = await Queue.findById(queueId);
+        queue.customers.push(custId);
         return await queue.save();
     },
     removeCustomerFromQueue: async (queueId, user) => {

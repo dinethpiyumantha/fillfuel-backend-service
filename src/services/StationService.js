@@ -10,7 +10,7 @@ module.exports = StationService = {
         return station;
     },
     create: async (station) => {
-        let insertedStation = await Station.insert(station).populate("fuels");
+        let insertedStation = await Station.create(station);
         return insertedStation;
     },
     remove: async (stationId) => {

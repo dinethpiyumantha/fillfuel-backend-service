@@ -11,7 +11,7 @@ module.exports = StationController = {
     },
     create: async (req, res) => {
         let station = await StationService.create(req.body);
-        res,json(station);
+        res.json(station);
     },
     remove: async (req, res) => {
         let stations = await StationService.remove(req.params.id);

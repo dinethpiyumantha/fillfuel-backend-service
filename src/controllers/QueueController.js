@@ -10,7 +10,7 @@ module.exports = QueueController = {
         res.json(queue);
     },
     addCustomerToQueue: async (req, res) => {
-        let queue = await QueueService.addCustomerToQueue(req.params.queueId, req.body);
+        let queue = await QueueService.addCustomerToQueue(req.params.queueId, req.params.custId);
         res.json(queue);
     },
     removeCustomerFromQueue: async (req, res) => {

@@ -1,5 +1,5 @@
 const express = require("express");
-const FuelController = require("../controllers/FuelController");
+const StationController = require("../controllers/StationController");
 const constants = require("../utils/constants");
 const { logInfo } = require("../utils/logging");
 const { reqToString } = require("../utils/stringUtils");
@@ -13,23 +13,23 @@ router.use((req, res, next) => {
 });
 
 router.get(`/`, async (req, res) => {
-    await FuelController.all(req, res);
+    await StationController.all(req, res);
 });
 
 router.post(`/`, async (req, res) => {
-    await FuelController.create(req, res);
+    await StationController.create(req, res);
 });
 
 router.put(`/:id`, async (req, res) => {
-    await FuelController.update(req, res);
+    await StationController.update(req, res);
 });
 
 router.delete(`/:id`, async (req, res) => {
-    await FuelController.delete(req, res);
+    await StationController.remove(req, res);
 });
 
 router.get(`/:id`, async (req, res) => {
-    await FuelController.getById(req, res);
+    await StationController.getById(req, res);
 });
 
 module.exports = router;
