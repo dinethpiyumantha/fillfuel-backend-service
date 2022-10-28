@@ -3,15 +3,18 @@ const { default: mongoose } = require("mongoose");
 const QueueSchema = new mongoose.Schema({
     fuel: {
         type: mongoose.Types.ObjectId,
-        ref: "Fuel"
+        ref: "Fuel",
+        required: false
     },
     station: {
         type: mongoose.Types.ObjectId,
-        ref: "Station"
+        ref: "Station",
+        required: false
     },
     customers: [{
         type: mongoose.Types.ObjectId,
-        ref: "User"
+        ref: "User",
+        required: false
     }]
 }, { timestamps: true });
 

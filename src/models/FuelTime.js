@@ -5,6 +5,7 @@ const FuelTimeSchema = new mongoose.Schema({
     fuel: {
         type: mongoose.Types.ObjectId,
         ref: "Fuel",
+        required: false
     },
     arrival: {
         type: String,

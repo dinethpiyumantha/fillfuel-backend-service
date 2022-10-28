@@ -10,15 +10,18 @@ const StationSchema = new mongoose.Schema({
     },
     fuels: [{
         type: mongoose.Types.ObjectId,
-        ref: "Fuel"
+        ref: "Fuel",
+        required: false
     }],
     queues: [{
         type: mongoose.Types.ObjectId,
-        ref: "Queue"
+        ref: "Queue",
+        required: false
     }],
     fuelTime: [{
         type: mongoose.Types.ObjectId,
         ref: "FuelTime",
+        required: false
     }]
 }, { timestamps: true });
 

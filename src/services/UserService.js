@@ -14,7 +14,7 @@ module.exports = UserService = {
         return user;
     },
     create: async (user) => {
-        let insertedUser = await User.insert(user);
+        let insertedUser = await User.create(user);
         return insertedUser;
     },
     remove: async (userId) => {

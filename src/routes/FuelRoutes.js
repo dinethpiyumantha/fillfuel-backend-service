@@ -9,7 +9,7 @@ router.use((req, res, next) => {
     logInfo(`${constants.REQUEST_RECIEVED} (Fuel) => ${reqToString(req)}`);
     logInfo("Fuel middleware in");
     next();
-    logInfo(`${constants.REQUEST_TERMINATED} (Fuel)}`);
+    logInfo(`${constants.REQUEST_TERMINATED} (Fuel)`);
 });
 
 router.get(`/`, async (req, res) => {
@@ -25,7 +25,7 @@ router.put(`/:id`, async (req, res) => {
 });
 
 router.delete(`/:id`, async (req, res) => {
-    await FuelController.delete(req, res);
+    await FuelController.remove(req, res);
 });
 
 router.get(`/:id`, async (req, res) => {

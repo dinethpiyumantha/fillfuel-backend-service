@@ -1,5 +1,6 @@
 const Fuel = require("../models/Fuel");
 const { logDebug } = require("../utils/logging");
+const { reqToString } = require("../utils/stringUtils");
 
 module.exports = FuelService = {
     all: async () => {
@@ -11,8 +12,9 @@ module.exports = FuelService = {
         return fuel;
     },
     create: async (fuel) => {
-        logDebug(fuel)
-        let insertedFuel = await Fuel.create(fuel);
+        logDebug(JSON.stringify(fuel))
+        const insertedFuel = await Fuel.create(fuel);
+        logDebug(JSON.stringify(insertedFuel))
         return insertedFuel;
     },
     remove: async (fuelId) => {
