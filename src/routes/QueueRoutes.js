@@ -1,6 +1,7 @@
 const express = require("express");
 const QueueController = require("../controllers/QueueController");
 const constants = require("../utils/constants");
+const { logInfo } = require("../utils/logging");
 const { reqToString } = require("../utils/stringUtils");
 const router = express.Router();
 
@@ -23,8 +24,8 @@ router.put(`/add/:queueId`, async (req, res) => {
     await QueueController.create(req, res);
 });
 
-router.put(`/remove/:queueId`, async (req, res) => {
-    await QueueController.create(req, res);
+router.put(`/add/:queueId/:custId`, async (req, res) => {
+    await QueueController.addCustomerToQueue(req, res);
 });
 
 router.get(`/count/:queueId`, async (req, res) => {

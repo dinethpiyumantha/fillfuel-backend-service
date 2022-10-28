@@ -1,5 +1,4 @@
 const express = require("express");
-const FuelController = require("../controllers/FuelController");
 const UserController = require("../controllers/UserController");
 const constants = require("../utils/constants");
 const { logInfo } = require("../utils/logging");
